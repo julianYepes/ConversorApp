@@ -47,12 +47,14 @@ public class MainActivity extends AppCompatActivity {
                     pesos = dolares * 3000;
                     ePesos.setText( pesos.toString());//string.valueOf(pesos)
                 }
-                if( eDolares.getText().toString().equals("") && !ePesos.getText().toString().equals("") ){
+                else if( eDolares.getText().toString().equals("") && !ePesos.getText().toString().equals("") ){
                     //dolares = Double.parseDouble( eDolares.getText().toString() );
                     pesos = Double.parseDouble( ePesos.getText().toString() );
 
                     dolares = pesos / 3000;
                     eDolares.setText( dolares.toString());//string.valueOf(pesos)
+                }else {
+                    Toast.makeText(getApplicationContext(),"Un campo debe estar vacio",Toast.LENGTH_SHORT).show();
                 }
 
                 if( eDolares.getText().toString().equals("") && ePesos.getText().toString().equals("") ){
